@@ -13,7 +13,6 @@ class Persons {
     var person_number:String?
     
     init(){
-        
     }
     
     init(person_id: Int, person_name: String, person_number: String) {

@@ -11,7 +11,9 @@ class HomePage: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var personTableView: UITableView!
+    
     var personList = [Persons]()
+    var viewModel = HomePageViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,17 +21,15 @@ class HomePage: UIViewController {
         personTableView.delegate = self
         personTableView.dataSource = self
         
-        let k1 = Persons(person_id: 1, person_name: "Yusuf", person_number: "414141")
-        let k2 = Persons(person_id: 2, person_name: "Ahmet", person_number: "343434")
-        let k3 = Persons(person_id: 3, person_name: "Kayısı", person_number: "474747")
-        personList.append(k1)
-        personList.append(k2)
-        personList.append(k3)
-        
-        
+        _ = viewModel.personList.subscribe(onNext: { list in
+            self.personList = list
+            self.personTableView.reloadData()
+            
+        })
+
     }
     override func viewWillAppear(_ animated: Bool) {
-        print("Came back")
+        viewModel.personLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,7 +44,7 @@ class HomePage: UIViewController {
 
 extension HomePage : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Search for Person : \(searchText)")
+        viewModel.search(searchText: searchText)
     }
 }
 
@@ -80,7 +80,7 @@ extension HomePage: UITableViewDelegate, UITableViewDataSource {
             alert.addAction(cancelAction)
             
             let yesAction = UIAlertAction(title: "Yes", style: .destructive){ action in
-                print("Delete Contact : \(person.person_name!)")
+                self.viewModel.delete(person_id: person.person_id!)
             }
             
             alert.addAction(yesAction)

@@ -9,4 +9,9 @@ import Foundation
 
 class PersonRegisterViewModel {
     
+    var pRepo = PersonDaoRepository()
+    
+    func save(person_name:String, person_number:String){
+        pRepo.save(person_name: person_name, person_number: person_number)
+    }
 }

@@ -11,7 +11,9 @@ class PersonDetail: UIViewController {
 
     @IBOutlet weak var tfPersonName: UITextField!
     @IBOutlet weak var tfPersonNumber: UITextField!
+    
     var person:Persons?
+    var viewModel = PersonDetailViewModel()
     
     
     override func viewDidLoad() {
@@ -23,19 +25,13 @@ class PersonDetail: UIViewController {
         }
     }
     
-    
     @IBAction func buttonUpdate(_ sender: Any) {
         
         if let pn = tfPersonName.text , let pr = tfPersonNumber.text, let k = person{
             
-            update(person_id: k.person_id!, person_name: pn, person_number: pr)
+            viewModel.update(person_id: k.person_id!, person_name: pn, person_number: pr)
     
         }
     }
-    
-    func update(person_id:Int, person_name:String , person_number:String){
-        print("Person update : \(person_id) - \(person_name) - \(person_number)")
-    }
-    
     
 }
