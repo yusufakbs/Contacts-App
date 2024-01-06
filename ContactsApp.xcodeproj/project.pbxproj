@@ -17,6 +17,11 @@
 		40C3C37F2B3C64A400CE9505 /* PersonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3C37E2B3C64A400CE9505 /* PersonDetail.swift */; };
 		40C3C3812B3C654800CE9505 /* Persons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3C3802B3C654800CE9505 /* Persons.swift */; };
 		40C3C3842B3CC89400CE9505 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3C3832B3CC89400CE9505 /* PersonCell.swift */; };
+		40F8A5902B49EE39005FE654 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 40F8A58F2B49EE39005FE654 /* RxSwift */; };
+		40F8A5992B49EEB7005FE654 /* PersonDaoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8A5982B49EEB7005FE654 /* PersonDaoRepository.swift */; };
+		40F8A59C2B49EEF6005FE654 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8A59B2B49EEF6005FE654 /* HomePageViewModel.swift */; };
+		40F8A59E2B49EF0B005FE654 /* PersonRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8A59D2B49EF0B005FE654 /* PersonRegisterViewModel.swift */; };
+		40F8A5A02B49EF16005FE654 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8A59F2B49EF16005FE654 /* PersonDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,10 @@
 		40C3C37E2B3C64A400CE9505 /* PersonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetail.swift; sourceTree = "<group>"; };
 		40C3C3802B3C654800CE9505 /* Persons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persons.swift; sourceTree = "<group>"; };
 		40C3C3832B3CC89400CE9505 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		40F8A5982B49EEB7005FE654 /* PersonDaoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDaoRepository.swift; sourceTree = "<group>"; };
+		40F8A59B2B49EEF6005FE654 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
+		40F8A59D2B49EF0B005FE654 /* PersonRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRegisterViewModel.swift; sourceTree = "<group>"; };
+		40F8A59F2B49EF16005FE654 /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F8A5902B49EE39005FE654 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +89,7 @@
 		40C3C3782B3C641B00CE9505 /* DATA */ = {
 			isa = PBXGroup;
 			children = (
+				40F8A5972B49EE97005FE654 /* repo */,
 				40C3C37A2B3C644100CE9505 /* Entity */,
 			);
 			path = DATA;
@@ -87,6 +98,7 @@
 		40C3C3792B3C642600CE9505 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				40F8A59A2B49EECE005FE654 /* viewModel */,
 				40C3C3822B3CC86E00CE9505 /* tableView */,
 				40C3C37B2B3C644D00CE9505 /* views */,
 			);
@@ -119,6 +131,24 @@
 			path = tableView;
 			sourceTree = "<group>";
 		};
+		40F8A5972B49EE97005FE654 /* repo */ = {
+			isa = PBXGroup;
+			children = (
+				40F8A5982B49EEB7005FE654 /* PersonDaoRepository.swift */,
+			);
+			path = repo;
+			sourceTree = "<group>";
+		};
+		40F8A59A2B49EECE005FE654 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				40F8A59B2B49EEF6005FE654 /* HomePageViewModel.swift */,
+				40F8A59D2B49EF0B005FE654 /* PersonRegisterViewModel.swift */,
+				40F8A59F2B49EF16005FE654 /* PersonDetailViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +165,9 @@
 			dependencies = (
 			);
 			name = ContactsApp;
+			packageProductDependencies = (
+				40F8A58F2B49EE39005FE654 /* RxSwift */,
+			);
 			productName = ContactsApp;
 			productReference = 40C3C3612B3C635200CE9505 /* ContactsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 40C3C3582B3C635200CE9505;
+			packageReferences = (
+				40F8A5822B49EE39005FE654 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 40C3C3622B3C635200CE9505 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -192,11 +228,15 @@
 			files = (
 				40C3C3812B3C654800CE9505 /* Persons.swift in Sources */,
 				40C3C3692B3C635200CE9505 /* HomePage.swift in Sources */,
+				40F8A59C2B49EEF6005FE654 /* HomePageViewModel.swift in Sources */,
 				40C3C37D2B3C648400CE9505 /* PersonRegistration.swift in Sources */,
+				40F8A59E2B49EF0B005FE654 /* PersonRegisterViewModel.swift in Sources */,
+				40F8A5A02B49EF16005FE654 /* PersonDetailViewModel.swift in Sources */,
 				40C3C3652B3C635200CE9505 /* AppDelegate.swift in Sources */,
 				40C3C37F2B3C64A400CE9505 /* PersonDetail.swift in Sources */,
 				40C3C3672B3C635200CE9505 /* SceneDelegate.swift in Sources */,
 				40C3C3842B3CC89400CE9505 /* PersonCell.swift in Sources */,
+				40F8A5992B49EEB7005FE654 /* PersonDaoRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +459,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		40F8A5822B49EE39005FE654 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		40F8A58F2B49EE39005FE654 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40F8A5822B49EE39005FE654 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 40C3C3592B3C635200CE9505 /* Project object */;
 }
