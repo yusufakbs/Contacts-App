@@ -11,33 +11,87 @@ import RxSwift
 class PersonDaoRepository {
     var personList = BehaviorSubject<[Persons]>(value: [Persons]())
     
+    let db:FMDatabase?
+    
+    init(){
+        let targetPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let dataBaseURL = URL(fileURLWithPath: targetPath).appendingPathComponent("directory.sqlite")
+        db = FMDatabase(path: dataBaseURL.path())
+    }
+    
     func save(person_name:String, person_number:String){
-        print("Save Contact: \(person_name) - \(person_number)")
+        db?.open()
+        do{
+            try db!.executeUpdate("INSERT INTO persons (person_name,person_num) VALUES (?,?)", values: [person_name,person_number])
+            
+        }catch {
+            print(error.localizedDescription)
+        }
+        db?.close()
     }
     
     func update(person_id:Int, person_name:String , person_number:String){
-        print("Person update : \(person_id) - \(person_name) - \(person_number)")
+        db?.open()
+        do{
+            try db!.executeUpdate("UPDATE persons SET person_name = ?, person_num = ? WHERE person_id = ?", values: [person_name, person_number, person_id])
+            
+        }catch {
+            print(error.localizedDescription)
+        }
+        db?.close()   
     }
     
     
     func delete(person_id:Int) {
-        print("Delete Contact : \(person_id)")
-        personLoad()
+        db?.open()
+        do{
+            try db!.executeUpdate("DELETE FROM persons WHERE person_id = ?", values: [person_id])
+            personLoad()
+        }catch {
+            print(error.localizedDescription)
+        }
+        db?.close()
+
     }
     
     func search(searchText : String) {
-        print("Person search : \(searchText)")
+        db?.open()
+        var list = [Persons]()
+        
+        do{
+            let rs = try db!.executeQuery("SELECT * FROM persons WHERE person_name like '%\(searchText)%'", values: nil)
+            while rs.next() {
+                let person = Persons(person_id: Int(rs.string(forColumn: "person_id"))!, person_name: rs.string(forColumn: "person_name")!, person_number: rs.string(forColumn: "person_num")!)
+                list.append(person)
+            }
+            personList.onNext(list)
+        }catch {
+            print(error.localizedDescription)
+        }
+        
+        
+        db?.close()
     }
+
     
     func personLoad(){
+        db?.open()
         var list = [Persons]()
-        let k1 = Persons(person_id: 1, person_name: "Yusuf", person_number: "414141")
-        let k2 = Persons(person_id: 2, person_name: "Ahmet", person_number: "343434")
-        let k3 = Persons(person_id: 3, person_name: "Kayısı", person_number: "474747")
-        list.append(k1)
-        list.append(k2)
-        list.append(k3)
-        personList.onNext(list)
+        
+        do{
+            let rs = try db!.executeQuery("SELECT * FROM persons", values: nil)
+            while rs.next() {
+                let person = Persons(person_id: Int(rs.string(forColumn: "person_id"))!, person_name: rs.string(forColumn: "person_name")!, person_number: rs.string(forColumn: "person_num")!)
+                list.append(person)
+
+            }
+            personList.onNext(list)
+        }catch {
+            print(error.localizedDescription)
+        }
+        
+        
+        db?.close()
     }
 }
 

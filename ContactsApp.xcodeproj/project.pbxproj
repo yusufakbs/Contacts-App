@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4071D6792B4D929B008D4662 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4071D66F2B4D929B008D4662 /* FMDatabase.m */; };
+		4071D67A2B4D929B008D4662 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4071D6702B4D929B008D4662 /* FMDatabaseQueue.m */; };
+		4071D67B2B4D929B008D4662 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4071D6732B4D929B008D4662 /* FMDatabasePool.m */; };
+		4071D67C2B4D929B008D4662 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4071D6762B4D929B008D4662 /* FMResultSet.m */; };
+		4071D67D2B4D929B008D4662 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4071D6782B4D929B008D4662 /* FMDatabaseAdditions.m */; };
+		4071D6812B4DDCA6008D4662 /* directory.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4071D6802B4DDCA6008D4662 /* directory.sqlite */; };
 		40C3C3652B3C635200CE9505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3C3642B3C635200CE9505 /* AppDelegate.swift */; };
 		40C3C3672B3C635200CE9505 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3C3662B3C635200CE9505 /* SceneDelegate.swift */; };
 		40C3C3692B3C635200CE9505 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3C3682B3C635200CE9505 /* HomePage.swift */; };
@@ -25,6 +31,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4071D66C2B4D921D008D4662 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		4071D66D2B4D929A008D4662 /* ContactsApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ContactsApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		4071D66E2B4D929B008D4662 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		4071D66F2B4D929B008D4662 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		4071D6702B4D929B008D4662 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		4071D6712B4D929B008D4662 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		4071D6722B4D929B008D4662 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		4071D6732B4D929B008D4662 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		4071D6742B4D929B008D4662 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		4071D6752B4D929B008D4662 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		4071D6762B4D929B008D4662 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		4071D6772B4D929B008D4662 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		4071D6782B4D929B008D4662 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		4071D6802B4DDCA6008D4662 /* directory.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = directory.sqlite; path = ../../directory.sqlite; sourceTree = "<group>"; };
 		40C3C3612B3C635200CE9505 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C3C3642B3C635200CE9505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C3C3662B3C635200CE9505 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,11 +75,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4071D66B2B4D921D008D4662 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4071D66C2B4D921D008D4662 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		40C3C3582B3C635200CE9505 = {
 			isa = PBXGroup;
 			children = (
 				40C3C3632B3C635200CE9505 /* ContactsApp */,
 				40C3C3622B3C635200CE9505 /* Products */,
+				4071D66B2B4D921D008D4662 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +111,19 @@
 				40C3C36D2B3C635300CE9505 /* Assets.xcassets */,
 				40C3C36F2B3C635300CE9505 /* LaunchScreen.storyboard */,
 				40C3C3722B3C635300CE9505 /* Info.plist */,
+				4071D6772B4D929B008D4662 /* FMDatabase.h */,
+				4071D66F2B4D929B008D4662 /* FMDatabase.m */,
+				4071D6722B4D929B008D4662 /* FMDatabaseAdditions.h */,
+				4071D6782B4D929B008D4662 /* FMDatabaseAdditions.m */,
+				4071D66E2B4D929B008D4662 /* FMDatabasePool.h */,
+				4071D6732B4D929B008D4662 /* FMDatabasePool.m */,
+				4071D6742B4D929B008D4662 /* FMDatabaseQueue.h */,
+				4071D6702B4D929B008D4662 /* FMDatabaseQueue.m */,
+				4071D6712B4D929B008D4662 /* FMDB.h */,
+				4071D6752B4D929B008D4662 /* FMResultSet.h */,
+				4071D6762B4D929B008D4662 /* FMResultSet.m */,
+				4071D66D2B4D929A008D4662 /* ContactsApp-Bridging-Header.h */,
+				4071D6802B4DDCA6008D4662 /* directory.sqlite */,
 			);
 			path = ContactsApp;
 			sourceTree = "<group>";
@@ -184,6 +226,7 @@
 				TargetAttributes = {
 					40C3C3602B3C635200CE9505 = {
 						CreatedOnToolsVersion = 15.1;
+						LastSwiftMigration = 1510;
 					};
 				};
 			};
@@ -214,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40C3C3712B3C635300CE9505 /* LaunchScreen.storyboard in Resources */,
+				4071D6812B4DDCA6008D4662 /* directory.sqlite in Resources */,
 				40C3C36E2B3C635300CE9505 /* Assets.xcassets in Resources */,
 				40C3C36C2B3C635200CE9505 /* Main.storyboard in Resources */,
 			);
@@ -229,12 +273,17 @@
 				40C3C3812B3C654800CE9505 /* Persons.swift in Sources */,
 				40C3C3692B3C635200CE9505 /* HomePage.swift in Sources */,
 				40F8A59C2B49EEF6005FE654 /* HomePageViewModel.swift in Sources */,
+				4071D6792B4D929B008D4662 /* FMDatabase.m in Sources */,
+				4071D67A2B4D929B008D4662 /* FMDatabaseQueue.m in Sources */,
 				40C3C37D2B3C648400CE9505 /* PersonRegistration.swift in Sources */,
 				40F8A59E2B49EF0B005FE654 /* PersonRegisterViewModel.swift in Sources */,
+				4071D67D2B4D929B008D4662 /* FMDatabaseAdditions.m in Sources */,
 				40F8A5A02B49EF16005FE654 /* PersonDetailViewModel.swift in Sources */,
 				40C3C3652B3C635200CE9505 /* AppDelegate.swift in Sources */,
+				4071D67C2B4D929B008D4662 /* FMResultSet.m in Sources */,
 				40C3C37F2B3C64A400CE9505 /* PersonDetail.swift in Sources */,
 				40C3C3672B3C635200CE9505 /* SceneDelegate.swift in Sources */,
+				4071D67B2B4D929B008D4662 /* FMDatabasePool.m in Sources */,
 				40C3C3842B3CC89400CE9505 /* PersonCell.swift in Sources */,
 				40F8A5992B49EEB7005FE654 /* PersonDaoRepository.swift in Sources */,
 			);
@@ -386,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Q3DUU9XD7;
@@ -404,6 +454,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yusufakbas.ContactsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ContactsApp/ContactsApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -414,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Q3DUU9XD7;
@@ -432,6 +485,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yusufakbas.ContactsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ContactsApp/ContactsApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
